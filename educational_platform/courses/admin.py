@@ -8,6 +8,7 @@ from .models.rating import Rating
 from .models.comment import Comment
 
 # Register your models here.
+
 admin.site.register(Course)
 admin.site.register(Lecture)
 admin.site.register(Task)
