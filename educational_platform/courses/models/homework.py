@@ -5,7 +5,7 @@ from .task import Task
 
 
 def get_file_path(instance, file_name):
-    return f'uploads/homeworks/{instance.student.username}/%Y/%m/%d/{instance.task.topic}/{file_name}'
+    return f'uploads/homeworks/{instance.student.username}/{instance.task.topic}/{file_name}'
 
 
 class Homework(models.Model):
@@ -23,3 +23,9 @@ class Homework(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     progress = models.CharField(max_length=20, choices=PROGRESS_CHOICES, default=NOT_DONE)
+
+    class Meta:
+        unique_together = ('task', 'student')
+
+    def __str__(self):
+        return self.task

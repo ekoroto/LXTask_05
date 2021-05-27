@@ -20,5 +20,6 @@ router.register(r'task', TaskViewSet)
 router.register('user', UserViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path(r'', include(router.urls)),
+    path(r'auth/', include('rest_framework.urls'))
 ]

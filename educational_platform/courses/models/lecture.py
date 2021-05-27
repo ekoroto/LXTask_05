@@ -4,7 +4,7 @@ from users.models import User
 
 
 def get_file_path(instance, file_name):
-    return f'uploads/lectures/%Y/%m/%d/{instance.topic}/{instance.author.first_name} {instance.author.last_name}/ \
+    return f'uploads/lectures/{instance.topic}/{instance.author.first_name} {instance.author.last_name}/ \
         {file_name}'
 
 
