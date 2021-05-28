@@ -28,4 +28,4 @@ class Homework(models.Model):
         unique_together = ('task', 'student')
 
     def __str__(self):
-        return self.task
+        return self.task.topic
