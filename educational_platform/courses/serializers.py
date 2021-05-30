@@ -30,16 +30,16 @@ class TaskSerializer(serializers.ModelSerializer):
 class HomeworkSerializer(serializers.ModelSerializer):
     class Meta:
         model = Homework
-        fields = ['id', 'task', 'student', 'attachment', 'progress']
+        fields = ['id', 'task', 'student', 'attachment', 'progress', 'created_at', 'updated_at']
 
 
 class RatingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rating
-        fields = ['id', 'value', 'homework']
+        fields = ['id', 'value', 'homework', 'created_at', 'updated_at']
 
 
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        fields = ['id', 'author', 'rating', 'text']
+        fields = ['id', 'author', 'rating', 'text', 'created_at']

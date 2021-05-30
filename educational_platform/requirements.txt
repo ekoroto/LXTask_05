@@ -2,3 +2,6 @@ Django==3.2.3
 djangorestframework==3.12.4
 djangorestframework-simplejwt==4.7.1
 drf-yasg==1.20.0
+django-filter==2.4.0
+pytest==6.2.4
+pytest-django==4.3.0

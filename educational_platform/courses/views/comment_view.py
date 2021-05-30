@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+from rest_framework.filters import OrderingFilter
 from rest_framework.permissions import IsAuthenticated
 
 from courses.models.comment import Comment
@@ -10,3 +11,5 @@ class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
     http_method_names = ('get', 'post', 'put', 'delete')
     permission_classes = (IsAuthenticated, )
+    filter_backends = (OrderingFilter, )
+    ordering_filter = ('created_at',)

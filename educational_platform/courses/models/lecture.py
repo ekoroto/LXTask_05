@@ -10,7 +10,7 @@ def get_file_path(instance, file_name):
 
 class Lecture(models.Model):
     topic = models.CharField(max_length=200)
-    attachments = models.FileField(upload_to=get_file_path)
+    attachments = models.FileField(upload_to=get_file_path, blank=True, null=True)
     author = models.ForeignKey(User,
                                on_delete=models.CASCADE,
                                blank=True,
